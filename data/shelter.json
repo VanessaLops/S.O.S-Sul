@@ -1,0 +1,122 @@
+[
+  {
+      "local": "São Martinho da Serra",
+      "endereco": "Rua Vinte Quatro de Janeiro, 2140, São Martinho da Serra - RS, Brasil",
+      "municipio": "São Martinho da Serra",
+      "categoria": "Água"
+  },
+  {
+      "local": "São Sebastião do Caí",
+      "endereco": "Ginásio Rio Branco, Estr. Bela Vista, 62, São Sebastião do Caí - RS, Brasil",
+      "municipio": "São Sebastião do Caí",
+      "categoria": "Alimentos"
+  },
+  {
+      "local": "Sobradinho",
+      "endereco": "Rua Doutor Homero de Lima Menezes, 78 - Centro, Sobradinho - RS, Brasil",
+      "municipio": "Sobradinho",
+      "categoria": "Vestimenta"
+  },
+  {
+      "local": "Cerro Branco",
+      "endereco": "Ginásio Municipal, Cerro Branco, RS, Brasil",
+      "municipio": "Cerro Branco",
+      "categoria": "Abrigo"
+  },
+  {
+      "local": "Ivorá",
+      "endereco": "Ginásio Municipal, R. Bento Gonçalves, 1064",
+      "municipio": "Ivorá",
+      "categoria": "Curativos"
+  },
+  {
+      "local": "Sapiranga",
+      "endereco": "Rua Presidente Kenedy, no222 - Centro, Sapiranga - RS, Brasil",
+      "municipio": "Sapiranga",
+      "categoria": "Alimentos"
+  },
+  {
+      "local": "Candelária",
+      "endereco": "Colégio Medianeira, Avenida Júlio de Castilhos, 1280 - Centro, Candelária - RS, Brasil",
+      "municipio": "Candelária",
+      "categoria": "Água"
+  },
+  {
+      "local": "Esteio",
+      "endereco": "EMEB Ezequiel Nunes Filho, Rua Ezequiel Nunes Filho, 181 - São Sebastiao, Esteio - RS, Brasil",
+      "municipio": "Esteio",
+      "categoria": "Vestimenta"
+  },
+  {
+      "local": "Esteio",
+      "endereco": "EMEB Dulce de Moraes, Rua República Argentina, 150 - Liberdade, Esteio - RS, Brasil",
+      "municipio": "Esteio",
+      "categoria": "Curativos"
+  },
+  {
+      "local": "Esteio",
+      "endereco": "EMEB Eva Karnal Johann, Rua Alvício Nienow, 222 - Liberdade, Esteio - RS, Brasil",
+      "municipio": "Esteio",
+      "categoria": "Água"
+  },
+  {
+      "local": "Esteio",
+      "endereco": "ESCOLA MARIA MARQUES, Rua Manoel dos Santos, 212 - Tres Marias, Esteio - RS, Brasil",
+      "municipio": "Esteio",
+      "categoria": "Abrigo"
+  },
+  {
+      "local": "Arroio Grande",
+      "endereco": "Abrigos Municipais (não informado), Arroio Grande, RS, Brasil",
+      "municipio": "Arroio Grande",
+      "categoria": "Alimentos"
+  },
+  {
+      "local": "General Câmara",
+      "endereco": "Ginásio de esportes, Ginásio Municipal de Esportes Tancredo Pereira Mendes, General Câmara - RS, Brasil",
+      "municipio": "General Câmara",
+      "categoria": "Curativos"
+  },
+  {
+      "local": "São Gabriel",
+      "endereco": "Ginasio Plácido de Castro, São Gabriel, RS, Brasil (Não Informado)",
+      "municipio": "São Gabriel",
+      "categoria": "Vestimenta"
+  },
+  {
+      "local": "Igrejinha",
+      "endereco": "Rua Senador Salgado Filho, 225 - Centro, Igrejinha - RS, Brasil",
+      "municipio": "Igrejinha",
+      "categoria": "Água"
+  },
+  {
+      "local": "Canoas",
+      "endereco": "Rua Dr. Barcellos, 700 - Centro, Canoas - RS, Brasil",
+      "municipio": "Canoas",
+      "categoria": "Abrigo"
+  },
+  {
+      "local": "Gravataí",
+      "endereco": "Rua Cônego João Marchiori, 270 - Centro, Gravataí - RS, Brasil",
+      "municipio": "Gravataí",
+      "categoria": "Curativos"
+  },
+  {
+      "local": "Guaíba",
+      "endereco": "Rua João Vicente, 300 - Centro, Guaíba - RS, Brasil",
+      "municipio": "Guaíba",
+      "categoria": "Alimentos"
+  },
+  {
+      "local": "Porto Alegre",
+      "endereco": "Av. Borges de Medeiros, 2.000 - Centro, Porto Alegre - RS, Brasil",
+      "municipio": "Porto Alegre",
+      "categoria": "Vestimenta"
+  },
+  {
+      "local": "Viamão",
+      "endereco": "Rua Vicente Monteggia, 1500 - Centro, Viamão - RS, Brasil",
+      "municipio": "Viamão",
+      "categoria": "Água"
+  }
+]

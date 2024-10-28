@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Abrigos</title>
+  <style>
+    .table-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    table {
+      width: 80%;
+      max-width: 800px;
+      border-collapse: collapse;
+      font-family: Arial, sans-serif;
+      border: 1px solid #ddd;
+      background-color: #ffffff;
+    }
+
+    th,
+    td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f4f4f4;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    @media (max-width: 600px) {
+      table {
+        width: 100%;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        display: block;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: #fff;
+      }
+
+      td {
+        display: block;
+        padding: 10px;
+        text-align: right;
+        font-weight: bold;
+        position: relative;
+      }
+
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: normal;
+        text-align: left;
+        color: #666;
+      }
+    }
+
+    .search-filter-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 10px;
+    }
+
+    .search-filter-container input,
+    .search-filter-container select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .search-filter-container input {
+      width: 70%;
+      max-width: 300px;
+    }
+
+    .search-filter-container select {
+      width: 150px;
+    }
+
+    .search-filter-container input:focus,
+    .search-filter-container select:focus {
+      border-color: #4caf50;
+      box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+      outline: none;
+    }
+
+    .search-filter-container input,
+    .search-filter-container select {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tableBody = document.querySelector("tbody");
+      const searchInput = document.getElementById("searchInput");
+      const filterSelect = document.getElementById("filterSelect");
+
+      fetch("/data/shelter.json")
+        .then((response) => {
+          if (!response.ok) throw new Error("Network response was not ok");
+          return response.json();
+        })
+        .then((data) => {
+          populateTable(data);
+
+          searchInput.addEventListener("input", (e) => {
+            filterTable(data, e.target.value, filterSelect.value);
+          });
+
+          filterSelect.addEventListener("change", (e) => {
+            filterTable(data, searchInput.value, e.target.value);
+          });
+        })
+        .catch((error) => {
+          console.error(
+            "There was a problem with the fetch operation:",
+            error
+          );
+        });
+
+      function populateTable(data) {
+        tableBody.innerHTML = "";
+        data.forEach((item) => {
+          const row = `<tr>
+                <td data-label="Município">${item.municipio}</td>
+                <td data-label="Local">${item.local}</td>
+                <td data-label="Endereço">${item.endereco}</td>
+              </tr>`;
+          tableBody.insertAdjacentHTML("beforeend", row);
+        });
+      }
+
+      function filterTable(data, searchText, filterType) {
+        const filteredData = data.filter((item) => {
+          const searchMatch =
+            item.municipio.toLowerCase().includes(searchText.toLowerCase()) ||
+            item.local.toLowerCase().includes(searchText.toLowerCase()) ||
+            item.endereco.toLowerCase().includes(searchText.toLowerCase());
+          const filterMatch = filterType
+            ? item.categoria.toLowerCase() === filterType.toLowerCase()
+            : true;
+
+          return searchMatch && filterMatch;
+        });
+
+        populateTable(filteredData);
+      }
+    });
+  </script>
+
+  <img src="/logo.jpeg" alt="Imagem Topo" class="topo-imagem" />
+
+
+  <div class="links-container">
+    <a href="/index.html">
+      <img src="imgs/home.png" alt="Home" class="icon" />
+      Home
+    </a>
+    <a href="#">
+      <img src="imgs/guia.png" alt="Guia" class="icon" />
+      Guia
+    </a>
+    <a href="/shelter.html">
+      <img src="imgs/abrigo.png" alt="Abrigo" class="icon" />
+      Abrigo
+    </a>
+    <a href="/register.html">
+      <img src="imgs/cadastro.png" alt="Cadastro" class="icon" />
+      Cadastro
+    </a>
+    <a href="#">
+      <img src="imgs/mapa.png" alt="Mapa" class="icon" />
+      Mapa
+    </a>
+  </div>
+
+  <div class="search-filter-container">
+    <input type="text" placeholder="Pesquisar Abrigo..." id="searchInput" />
+    <select id="filterSelect">
+      <option value="">Todos</option>
+      <option value="Água">Água</option>
+      <option value="Alimentos">Alimentos</option>
+      <option value="Vestimenta">Vestimenta</option>
+      <option value="Abrigo">Abrigo</option>
+      <option value="Curativos">Curativos</option>
+    </select>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Município</th>
+          <th>Local</th>
+          <th>Endereço</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Município">São Paulo</td>
+          <td data-label="Local">Centro Comunitário</td>
+          <td data-label="Endereço">Rua das Flores, 123</td>
+        </tr>
+        <tr>
+          <td data-label="Município">Rio de Janeiro</td>
+          <td data-label="Local">Escola Municipal</td>
+          <td data-label="Endereço">Avenida Atlântica, 456</td>
+        </tr>
+        <tr>
+          <td data-label="Município">Salvador</td>
+          <td data-label="Local">Associação de Moradores</td>
+          <td data-label="Endereço">Rua da Paz, 789</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

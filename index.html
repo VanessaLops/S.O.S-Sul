@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="style.css" />
+	<title>Inicio</title>
+	<style>
+		/* Adiciona uma leve transparência ao fundo dos elementos */
+		.container {
+			text-align: center;
+			padding: 20px;
+			background: rgba(255, 255, 255, 0.8);
+			/* Fundo branco com 80% de opacidade */
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+
+		.nivel-container {
+			margin: 20px 0;
+		}
+
+		#nivel-agua {
+			width: 100%;
+			height: 25px;
+		}
+
+		.alerta {
+			font-weight: bold;
+			margin-top: 20px;
+			display: none;
+		}
+
+		/* Estilo do alerta para nível alto */
+		.alerta.mostrado.alto {
+			display: block;
+			color: #ff0000;
+			/* Vermelho para nível alto */
+		}
+
+		/* Estilo do alerta para nível baixo */
+		.alerta.mostrado.baixo {
+			display: block;
+			color: #00a000;
+			/* Verde para nível baixo */
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Imagem no topo -->
+	<img src="/logo.jpeg" alt="Imagem Topo" class="topo-imagem" />
+
+	<!-- Retângulo cinza com links e ícones -->
+	<div class="links-container">
+		<a href="/index.html">
+			<img src="imgs/home.png" alt="Home" class="icon" />
+			Home
+		</a>
+		<a href="/guia.html">
+			<img src="imgs/guia.png" alt="Guia" class="icon" />
+			Guia
+		</a>
+		<a href="/shelter.html">
+			<img src="imgs/abrigo.png" alt="Abrigo" class="icon" />
+			Abrigo
+		</a>
+		<a href="/register.html">
+			<img src="imgs/cadastro.png" alt="Cadastro" class="icon" />
+			Cadastro
+		</a>
+		<a href="/mapa.html">
+			<img src="imgs/mapa.png" alt="Mapa" class="icon" />
+			Mapa
+		</a>
+	</div>
+
+	<div class="container">
+		<h1>Monitoramento do Nível da Água</h1>
+		<div class="nivel-container">
+			<label for="nivel-agua">Nível da Água:</label>
+			<progress id="nivel-agua" value="0" max="100"></progress>
+			<p id="nivel-texto">0%</p>
+		</div>
+		<div id="alerta" class="alerta oculto">
+			⚠️ Alerta: O nível da água está acima do limite seguro! ⚠️
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>

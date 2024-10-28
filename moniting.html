@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento do Nível da Água</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Adiciona imagem de fundo ao site */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://www.visiteobrasil.com.br/galerias/carac1-rio-grande-do-sul-rios/1028-020324-rio-uruguai-foto-reproducao-prefeitura-gramado-dos-loureirosgr.jpg');
+            background-size: cover;
+            /* Ajusta a imagem para cobrir toda a tela */
+            background-position: center;
+            /* Centraliza a imagem */
+            background-repeat: no-repeat;
+            /* Evita repetição da imagem */
+        }
+
+        /* Adiciona uma leve transparência ao fundo dos elementos */
+        .container {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            /* Fundo branco com 80% de opacidade */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .nivel-container {
+            margin: 20px 0;
+        }
+
+        #nivel-agua {
+            width: 100%;
+            height: 25px;
+        }
+
+        .alerta {
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+        }
+
+        /* Estilo do alerta para nível alto */
+        .alerta.mostrado.alto {
+            display: block;
+            color: #ff0000;
+            /* Vermelho para nível alto */
+        }
+
+        /* Estilo do alerta para nível baixo */
+        .alerta.mostrado.baixo {
+            display: block;
+            color: #00a000;
+            /* Verde para nível baixo */
+        }
+    </style>
+</head>
+
+<body>
+   
+</body>
+
+</html>
